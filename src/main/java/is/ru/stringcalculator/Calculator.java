@@ -7,6 +7,7 @@ public class Calculator {
 			return 0;
 		}
 		return 1;
+
 	}
 
      
