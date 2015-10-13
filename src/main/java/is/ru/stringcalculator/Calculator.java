@@ -9,6 +9,10 @@ public class Calculator {
 		else if(text.contains(",")){
 			return sum(splitNumbers(text));
 		}
+		else if(text.contains("/")){
+			String deLimiter = "" + text.charAt(2); 
+			return sum(splitbyDelim(text, deLimiter));
+		}
 		else
 			return 1;
 	}
@@ -19,7 +23,7 @@ public class Calculator {
 
 	private static String[] splitNumbers(String numbers){
 	    numbers = numbers.replaceAll("\n", "");
-	    return numbers.split(",");
+	    return numbers.split("\\W+");
 	}
       
     private static int sum(String[] numbers){
@@ -28,6 +32,13 @@ public class Calculator {
 		    total += toInt(number);
 		}
 		return total;
+    }
+    private static String[] splitbyDelim(String numbers, String deLimiter){
+    	String newstring = numbers.substring(4, 7);
+    	System.out.println("HEY");
+    	System.out.println(newstring);
+    	System.out.println("HEY");
+    	return newstring.split(deLimiter);
     }
 
 
