@@ -2,7 +2,7 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 
-	public static int add(String text){
+	public static int add(String text) throws Exception{
 		if(text.equals("")){
 			return 0;
 		}
@@ -26,7 +26,7 @@ public class Calculator {
 	    return numbers.split("\\W+");
 	}
       
-    private static int sum(String[] numbers){
+    private static int sum(String[] numbers){   
  	    int total = 0;
         for(String number : numbers){
 		    total += toInt(number);
@@ -35,12 +35,8 @@ public class Calculator {
     }
     private static String[] splitbyDelim(String numbers, String deLimiter){
     	String newstring = numbers.substring(4, 7);
-    	System.out.println("HEY");
-    	System.out.println(newstring);
-    	System.out.println("HEY");
     	return newstring.split(deLimiter);
     }
-
 
 
 }
