@@ -35,7 +35,7 @@ public class CalculatorTest {
 	@Test
 	public void testTwoNumbers() {
 		try{
-		assertEquals(3, Calculator.add("1,2"));
+			assertEquals(3, Calculator.add("1,2"));
 	    }
 		catch(Exception exc) {
 			System.out.println("WTF");
@@ -44,7 +44,7 @@ public class CalculatorTest {
 	@Test
 	public void testNewline() {
 		try{
-		assertEquals(3, Calculator.add("1\n,2"));
+			assertEquals(3, Calculator.add("1\n,2"));
 		}
 		catch(Exception exc) {
 			System.out.println("WTF");
