@@ -2,6 +2,7 @@ package is.ru.stringcalculator;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import java.util.*;
 import org.junit.Test;
 
 public class CalculatorTest {
@@ -52,20 +53,30 @@ public class CalculatorTest {
 	@Test
 	public void testDelimiter() {
 		try{
-		assertEquals(3, Calculator.add("//;\n1;2"));
+			assertEquals(3, Calculator.add("//;\n1;2"));
 		}
 		catch(Exception exc) {
-			System.out.println("WTF");
 		}
 	}
 	@Test 
 	public void testMinus() {
 		try{
-			assertEquals(3, Calculator.add("5,-2"));
+			assertEquals(3, Calculator.add("5,-2,-6"));
 		}
 		catch(Exception exc) {
-			System.out.println(exc.getMessage());
-			fail("An exception was caught");
+			String error = "" + exc.getMessage();
+			List <Integer> results = new ArrayList();
+			String thetext = "Negatives not allowed: ";
+			for(int i = 0; i < error.length(); i++){
+				if(error.charAt(i) == '-'){
+					thetext = thetext + "-" + error.charAt(i+1);
+					if((error.length() - 2) != i ){
+						thetext = thetext + ",";
+					}
+				}
+
+			}
+			fail(thetext);
 		}
 	}
 }

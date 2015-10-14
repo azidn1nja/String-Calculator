@@ -3,6 +3,10 @@ package is.ru.stringcalculator;
 public class Calculator {
 
 	public static int add(String text) throws Exception{
+		if(text.contains("-")){
+			System.out.println("ARE YOU HERE");
+			throw new Exception(text);
+		}
 		if(text.equals("")){
 			return 0;
 		}
