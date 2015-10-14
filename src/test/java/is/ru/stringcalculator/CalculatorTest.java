@@ -28,7 +28,7 @@ public class CalculatorTest {
 			assertEquals(1, Calculator.add("1"));
 		}
 		catch(Exception exc) {
-			System.out.println("WTF");
+	
 		}
 	}
 
