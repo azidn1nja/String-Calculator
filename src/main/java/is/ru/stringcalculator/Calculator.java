@@ -17,7 +17,7 @@ public class Calculator {
 			return sum(splitbyDelim(text, deLimiter));
 		}
 		else
-			return 1;
+			return toInt(text);
 	}
 
 	private static int toInt(String number){
@@ -32,7 +32,7 @@ public class Calculator {
     private static int sum(String[] numbers){   
  	    int total = 0;
         for(String number : numbers){
-        	if(toInt(number) <= 1000){
+        	if(isbelowThousand(number)){
 		    	total += toInt(number);
 			}
 		}
@@ -41,6 +41,12 @@ public class Calculator {
     private static String[] splitbyDelim(String numbers, String deLimiter){
     	String newstring = numbers.substring(4, 7);
     	return newstring.split(deLimiter);
+    }
+    private static boolean isbelowThousand(String number){
+    	if(toInt(number) <= 1000){
+    		return true;
+    	}
+   		return false;
     }
 
 
