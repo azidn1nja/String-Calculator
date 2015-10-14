@@ -18,7 +18,7 @@ public class CalculatorTest {
 		}
 
 		catch(Exception exc) {
-			System.out.println("WTF");
+			
 		}
 
 	}
@@ -38,7 +38,7 @@ public class CalculatorTest {
 			assertEquals(3, Calculator.add("1,2"));
 	    }
 		catch(Exception exc) {
-			System.out.println("WTF");
+	
 		}
 	}
 	@Test
@@ -47,7 +47,7 @@ public class CalculatorTest {
 			assertEquals(3, Calculator.add("1\n,2"));
 		}
 		catch(Exception exc) {
-			System.out.println("WTF");
+
 		}
 	}
 	@Test
