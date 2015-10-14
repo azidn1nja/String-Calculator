@@ -4,7 +4,6 @@ public class Calculator {
 
 	public static int add(String text) throws Exception{
 		if(text.contains("-")){
-			System.out.println("ARE YOU HERE");
 			throw new Exception(text);
 		}
 		if(text.equals("")){
@@ -33,7 +32,9 @@ public class Calculator {
     private static int sum(String[] numbers){   
  	    int total = 0;
         for(String number : numbers){
+        	
 		    total += toInt(number);
+			
 		}
 		return total;
     }

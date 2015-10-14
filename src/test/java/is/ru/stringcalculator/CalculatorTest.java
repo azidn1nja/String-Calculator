@@ -79,6 +79,15 @@ public class CalculatorTest {
 			fail(thetext);
 		}
 	}
+	@Test 
+	public void testThousand() {
+		try{
+			assertEquals(1, Calculator.add("1001,1"));
+		}
+		catch(Exception exc) {
+		
+		}
+	}
 }
 
 	
