@@ -115,6 +115,15 @@ public class CalculatorTest {
 		
 		}
 	}
+	@Test
+	public void testManyNumbers() {
+		try{
+			assertEquals(10, Calculator.add("1,2,3,4"));
+	    }
+		catch(Exception exc) {
+	
+		}
+	}
 }
 
 	
