@@ -1,5 +1,7 @@
 package is.ru.stringcalculator;
 
+import java.util.*;
+
 public class Calculator {
 
 	public static int add(String text) throws Exception{
@@ -9,19 +11,9 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
-		if(text.contains("[")){
-
+		else{
 			return sum(splitByManyD(text));
 		}
-		else if(text.contains(",")){
-			return sum(splitNumbers(text));
-		}
-		else if(text.contains("/")){
-			String deLimiter = "" + text.charAt(2); 
-			return sum(splitbyDelim(text, deLimiter));
-		}
-		else
-			return toInt(text);
 	}
 
 	private static int toInt(String number){
@@ -55,10 +47,17 @@ public class Calculator {
     private static String[] splitByManyD(String numbers){
     	String [] first = numbers.split("\\n");
     	String work = first[0].replace("*", "\\*");
+    	work = work.replace("//", "");
+ 
     	String work2 = first[1];
-    	String delimiter = work.substring(work.indexOf("[") + 1, work.indexOf("]"));
-		String [] arr = work2.split(delimiter);
-    	return work2.split(delimiter);
+    	String [] splitdel = work.split("]");
+    	String deLim = "";
+   
+    	for(int i = 0; i < splitdel.length; i++){
+    		deLim = deLim + splitdel[i].substring(splitdel[i].indexOf("[") + 1, splitdel[i].length()) + "|";
+    	}
+    	deLim = deLim.substring(0, deLim.length() - 1);
+    	return work2.split(deLim);
     }
 
 
