@@ -9,6 +9,10 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
+		if(text.contains("[")){
+			String[] a = splitByManyD(text);
+			return sum(a);
+		}
 		else if(text.contains(",")){
 			return sum(splitNumbers(text));
 		}
@@ -47,6 +51,15 @@ public class Calculator {
     		return true;
     	}
    		return false;
+    }
+    private static String[] splitByManyD(String numbers){
+    	String [] first = numbers.split("\\n");
+    	String work = first[0];
+    	work = work.replace("*", "\\*");
+    	String work2 = first[1];
+    	String delimiter = work.substring(work.indexOf("[") + 1, work.indexOf("]"));
+		String [] arr = work2.split("\\*");
+    	return work2.split(delimiter);
     }
 
 

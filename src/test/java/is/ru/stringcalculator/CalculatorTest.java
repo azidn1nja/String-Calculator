@@ -91,7 +91,7 @@ public class CalculatorTest {
 	@Test 
 	public void anyLengthDelim() {
 		try{
-			assertEquals(20000, Calculator.add("//[!!!]\n1!!!2!!!3"));
+			assertEquals(6, Calculator.add("//[***]\n1***2***3"));
 		}
 		catch(Exception exc) {
 		
