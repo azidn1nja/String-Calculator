@@ -10,6 +10,7 @@ public class Calculator {
 			return 0;
 		}
 		if(text.contains("[")){
+
 			return sum(splitByManyD(text));
 		}
 		else if(text.contains(",")){
@@ -56,7 +57,7 @@ public class Calculator {
     	String work = first[0].replace("*", "\\*");
     	String work2 = first[1];
     	String delimiter = work.substring(work.indexOf("[") + 1, work.indexOf("]"));
-		String [] arr = work2.split("\\*");
+		String [] arr = work2.split(delimiter);
     	return work2.split(delimiter);
     }
 

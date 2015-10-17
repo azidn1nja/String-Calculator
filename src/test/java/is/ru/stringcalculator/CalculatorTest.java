@@ -97,6 +97,15 @@ public class CalculatorTest {
 		
 		}
 	}
+	@Test
+	public void multipleDelim() {
+		try{
+			assertEquals(6, Calculator.add("//[*][%]\n1*2%3"));
+		}
+		catch(Exception exc) {
+		
+		}
+	}
 }
 
 	
