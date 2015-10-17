@@ -61,7 +61,7 @@ public class CalculatorTest {
 	@Test 
 	public void testMinus() {
 		try{
-			assertEquals(3, Calculator.add("5,-2,-6"));
+			assertEquals(13, Calculator.add("5,-2,-6"));
 		}
 		catch(Exception exc) {
 			String error = "" + exc.getMessage();
@@ -83,6 +83,15 @@ public class CalculatorTest {
 	public void testThousand() {
 		try{
 			assertEquals(1, Calculator.add("1001,1"));
+		}
+		catch(Exception exc) {
+		
+		}
+	}
+	@Test 
+	public void anyLengthDelim() {
+		try{
+			assertEquals(20000, Calculator.add("//[!!!]\n1!!!2!!!3"));
 		}
 		catch(Exception exc) {
 		
